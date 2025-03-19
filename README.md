@@ -33,6 +33,7 @@ Mettre en place sudo, SSH et une politique de mot de passe stricte.
 ```
 su - //Change pour root
 apt install sudo
+```
 
 Étape 2 : Ajouter un utilisateur au groupe sudo
 usermod -aG sudo <utilisateur>
