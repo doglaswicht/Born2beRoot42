@@ -29,6 +29,8 @@ Mettre en place sudo, SSH et une politique de mot de passe stricte.
 
 Étape 1 : Installation de sudo
 
+
+```
 su - //Change pour root
 apt install sudo
 
