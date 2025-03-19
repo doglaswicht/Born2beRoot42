@@ -1,6 +1,6 @@
 # Born2beRoot42
 
-42cursus - Born2beroot
+# 42cursus - Born2beroot
 
 Dans ce projet, nous allons créer et configurer une machine virtuelle en suivant des règles strictes. À la fin, on sera en mesure de configurer notre propre système d’exploitation en respectant des contraintes de sécurité.
 
@@ -25,7 +25,7 @@ Installer Debian/Rocky Linux avec les paramètres requis.
 Configurer les partitions en utilisant LVM.
 Mettre en place sudo, SSH et une politique de mot de passe stricte.
 
-sudo
+# sudo
 
 Étape 1 : Installation de sudo
 
@@ -47,7 +47,7 @@ Defaults        passwd_tries=3
 Defaults        badpass_message="Mot de passe incorrect"
 Defaults        logfile="/var/log/sudo/sudo.log"
 
-SSH
+# SSH
 
 Étape 1 Installation et configuration de SSH:
 sudo apt install openssh-server
@@ -66,7 +66,7 @@ sudo systemctl restart ssh
 Étape 4 Connexion distante
 ssh <utilisateur>@<ip> -p 4242
 
-Installer & Configurer UFW
+# Installer & Configurer UFW
 
 Le pare-feu UFW (Uncomplicated Firewall) permet de sécuriser les connexions entrantes et sortantes.
 Étape 1 Installer UFW:
@@ -79,7 +79,7 @@ sudo ufw enable
 Étape 4 Verifier status:
 sudo ufw status
 
-Gestion des utilisateurs
+# Gestion des utilisateurs
 
 Politique de mot de passe
 Dans /etc/login.defs:
@@ -90,7 +90,7 @@ Dans /etc/login.defs:
 Dans /etc/pam.d/common-password :
 password requisite pam_pwquality.so retry=3 minlen=10 ucredit=-1 dcredit=-1 lcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root
 
-Création d’un utilisateur et d’un groupe
+# Création d’un utilisateur et d’un groupe
 
 sudo adduser <utilisateur>
 sudo addgroup user42
@@ -99,7 +99,7 @@ sudo usermod -aG user42 <utilisateur>
 verification du nouveau user creé
 sudo chage -l <unitilisateur>
 
-cron
+# cron
 Planification d’une tâche automatique
 Ajouter une tâche dans crontab:
 sudo crontab -u root -e
@@ -109,7 +109,7 @@ Exemple : exécuter un script toutes les 10 minutes:
 
 
 
-******Surveillance et monitoring********
+# Surveillance et monitoring
 Créer un script monitoring.sh affichant des informations système :
 
 1.Architecture et version du noyau
@@ -134,7 +134,8 @@ wall "  #Architecture: $arc
 Donner les permissions d'execution:
 chmood +x monitoring.sh
 
-Bonus - Installation de WordPress avec Lighttpd, MariaDB et PHP
+# Bonus - 
+## Installation de WordPress avec Lighttpd, MariaDB et PHP
 
 Étape 1 : Installer Lighttpd
 
