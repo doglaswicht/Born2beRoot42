@@ -68,36 +68,47 @@ sudo systemctl start ssh
 
 Étape 2 Sécurisation de SSH
 Dans /etc/ssh/sshd_config:
-
--> Port 4242
--> PermitRootLogin no
-
+```
+Port 4242
+PermitRootLogin no
+```
 Étape 3 Redémarrer SSH:
+```
 sudo systemctl restart ssh
+```
 
 Étape 4 Connexion distante
+```
 ssh <utilisateur>@<ip> -p 4242
-
+```
 # Installer & Configurer UFW
 
 Le pare-feu UFW (Uncomplicated Firewall) permet de sécuriser les connexions entrantes et sortantes.
 Étape 1 Installer UFW:
+```
 sudo apt install ufw
-
+```
 Étape 2 Autoriser SSH sur un port spécifique (4242)
+```
 sudo ufw allow 4242/tcp
+```
 Étape 3 Activer UFW:
+```
 sudo ufw enable
+```
 Étape 4 Verifier status:
+```
 sudo ufw status
-
+```
 # Gestion des utilisateurs
 
 Politique de mot de passe
 Dans /etc/login.defs:
+```
 -> PASS_MAX_DAYS   30
 -> PASS_MIN_DAYS   2
 -> PASS_WARN_AGE   7
+```
 
 Dans /etc/pam.d/common-password :
 password requisite pam_pwquality.so retry=3 minlen=10 ucredit=-1 dcredit=-1 lcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root
