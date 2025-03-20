@@ -27,11 +27,11 @@ Mettre en place sudo, SSH et une politique de mot de passe stricte.
 
 # sudo
 
-Étape 1 : Installation de sudo
+Étape 1 Installation de sudo
 
 
 ```
-su - //Change pour root
+su - 
 apt install sudo
 ```
 
@@ -39,12 +39,13 @@ apt install sudo
 usermod -aG sudo <utilisateur>
 
 Étape 3 : Vérifier les permissions
-sudo -v
+```sudo -v
+```
 
 Étape 4 : Configurer sudo
 Modifier les règles avec:
-sudo visudo
-
+```sudo visudo
+```
 Ajouter des règles comme:
 Defaults        passwd_tries=3
 Defaults        badpass_message="Mot de passe incorrect"
@@ -53,9 +54,9 @@ Defaults        logfile="/var/log/sudo/sudo.log"
 # SSH
 
 Étape 1 Installation et configuration de SSH:
-sudo apt install openssh-server
+```sudo apt install openssh-server
 sudo systemctl enable ssh
-sudo systemctl start ssh
+sudo systemctl start ssh```
 
 Étape 2 Sécurisation de SSH
 Dans /etc/ssh/sshd_config:
