@@ -124,12 +124,12 @@ Exemple : exécuter un script toutes les 10 minutes:
 # Surveillance et monitoring
 Créer un script monitoring.sh affichant des informations système :
 
-1.Architecture et version du noyau
-2.Nombre de CPU physiques et virtuels
-3.Utilisation de la mémoire et du disque
-4.Charge du processeur
-5.Nombre de connexions actives
-6.Adresse IP et MAC
+1.Architecture et version du noyau</br>
+2.Nombre de CPU physiques et virtuels</br>
+3.Utilisation de la mémoire et du disque</br>
+4.Charge du processeur</br>
+5.Nombre de connexions actives</br>
+6.Adresse IP et MAC</br>
 
 ```
 #!/bin/bash
@@ -145,22 +145,26 @@ wall "  #Architecture: $arc
         #Mémoire: $uram/${fram}MB ($pram%)"
 ```
 
-Donner les permissions d'execution:
+Donner les permissions d'execution:</br>
 chmood +x monitoring.sh
 
 # Bonus - 
 ## Installation de WordPress avec Lighttpd, MariaDB et PHP
 
-Étape 1 : Installer Lighttpd
+Étape 1 : Installer Lighttpd</br>
 
-Lighttpd est un serveur web léger et performant, idéal pour les environnements à ressources limitées comme un Raspberry Pi.
+Lighttpd est un serveur web léger et performant, idéal pour les environnements à ressources limitées comme un Raspberry Pi.</br>
 
-Installer Lighttpd
+## Installer Lighttpd
+```
 sudo apt install lighttpd -y
+```
 
 Activer et démarrer le service :
+```
 sudo systemctl enable lighttpd
 sudo systemctl start lighttpd
+```
 
 Vérifier que le serveur fonctionne :
 Ouvre un navigateur et entre l'IP de ton serveur :
@@ -168,11 +172,13 @@ http://192.168.1.100
 
 Étape 2 : Installer MariaDB (MySQL)
 Installer MariaDB:
+```
 sudo apt install mariadb-server -y
-
+```
 Sécuriser MariaDB:
+```
 sudo mysql_secure_installation
-
+```
 Définir un mot de passe root : Oui
 Supprimer les utilisateurs anonymes : Oui
 Interdire l'accès root à distance : Oui
@@ -180,37 +186,48 @@ Supprimer la base de test : Oui
 Recharger les privilèges : Oui
 
 Vérifier que MariaDB fonctionne:
+```
 sudo systemctl status mariadb
-
+```
 Étape 3 : Créer une base de données pour WordPress
 Se connecter à MariaDB:
+```
 sudo mysql -u root -p
-
+```
 Créer une base de données pour WordPress:
+```
 CREATE DATABASE wordpress;
+```
 
 Créer un utilisateur WordPress avec un mot de passe sécurisé:
+```
 CREATE USER 'wpuser'@'localhost' IDENTIFIED BY 'password';
-
+```
 Donner tous les privilèges à l'utilisateur WordPress:
+```
 GRANT ALL PRIVILEGES ON wordpress.* TO 'wpuser'@'localhost';
 FLUSH PRIVILEGES;
-
+```
 Quitter MariaDB
+```
 EXIT;
-
+```
 Installer PHP
 Installer PHP et les extensions nécessaires
+```
 sudo apt install php-cgi php-mysql -y
-
+```
 Étape 4 Activer le module FastCGI dans Lighttpd:
+```
 sudo lighty-enable-mod fastcgi
 sudo lighty-enable-mod fastcgi-php
 sudo systemctl restart lighttpd
+```
 
 Vérifier que PHP fonctionne :
+```
 sudo nano /var/www/html/info.php
-
+```
 Ajoute ce code :
 <?php phpinfo(); ?>
 
@@ -218,31 +235,42 @@ Ensuite, va sur http://192.168.1.100/info.php pour voir la page de configuration
 
 Étape 5 : Installer wordPress
 Télécharger wordPress:
+```
 sudo wget https://wordpress.org/latest.tar.gz -P /var/www/html
+```
 
 Extraire les fichiers:
+```
 sudo tar -xzvf /var/www/html/latest.tar.gz -C /var/www/html
-
+```
 Donner les permissions correctes:
+```
 sudo chown -R www-data:www-data /var/www/html/wordpress
 sudo chmod -R 755 /var/www/html/wordpress
+```
 
 Étape 6 Configurer wordPress
 Renommer le fichier de configuration:
+```
 sudo cp /var/www/html/wordpress/wp-config-sample.php /var/www/html/wordpress/wp-config.php
+```
 
 Modifier les paramètres de connexion à la base de données:
+```
 sudo nano /var/www/html/wordpress/wp-config.php
-
+```
 Changer ces lignes
+```
 define('DB_NAME', 'wordpress');
 define('DB_USER', 'wpuser');
 define('DB_PASSWORD', 'password');
 define('DB_HOST', 'localhost');
+```
 
 Redémarrer Lighttpd:
+```
 sudo systemctl restart lighttpd
-
+```
 Étape 7 Installer wordPress via le navigateur
 Ouvre un navigateur et accède à:
 http://192.168.1.100/wordpress
@@ -254,8 +282,11 @@ Suis les étapes d’installation :
 
 Étape 8 Sécuriser wordPress
 Supprimer le fichier info.php:
+```
 sudo rm /var/www/html/info.php
+```
 
 Restreindre l’accès aux fichiers de configuration:
+```
 sudo chmod 600 /var/www/html/wordpress/wp-config.php
-
+```
