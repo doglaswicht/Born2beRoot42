@@ -36,7 +36,8 @@ apt install sudo
 ```
 
 Étape 2 : Ajouter un utilisateur au groupe sudo
-usermod -aG sudo <utilisateur>
+``` usermod -aG sudo <utilisateur>
+```
 
 Étape 3 : Vérifier les permissions
 ```
@@ -45,7 +46,8 @@ sudo -v
 
 Étape 4 : Configurer sudo
 Modifier les règles avec:
-```sudo visudo
+```
+sudo visudo
 ```
 Ajouter des règles comme:
 Defaults        passwd_tries=3
