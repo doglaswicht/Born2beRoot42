@@ -131,7 +131,7 @@ Créer un script monitoring.sh affichant des informations système :
 5.Nombre de connexions actives
 6.Adresse IP et MAC
 
-´´´
+```
 #!/bin/bash
 1.arc=$(uname -a)
 2.pcpu=$(grep "physical id" /proc/cpuinfo | sort | uniq | wc -l)
@@ -143,7 +143,7 @@ wall "  #Architecture: $arc
         #CPU physique: $pcpu
         #vCPU: $vcpu
         #Mémoire: $uram/${fram}MB ($pram%)"
-´´´
+```
 
 Donner les permissions d'execution:
 chmood +x monitoring.sh
