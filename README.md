@@ -39,7 +39,8 @@ apt install sudo
 usermod -aG sudo <utilisateur>
 
 Étape 3 : Vérifier les permissions
-```sudo -v
+```
+sudo -v
 ```
 
 Étape 4 : Configurer sudo
@@ -54,9 +55,11 @@ Defaults        logfile="/var/log/sudo/sudo.log"
 # SSH
 
 Étape 1 Installation et configuration de SSH:
-```sudo apt install openssh-server
+```
+sudo apt install openssh-server
 sudo systemctl enable ssh
-sudo systemctl start ssh```
+sudo systemctl start ssh
+```
 
 Étape 2 Sécurisation de SSH
 Dans /etc/ssh/sshd_config:
