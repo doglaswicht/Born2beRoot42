@@ -36,7 +36,9 @@ apt install sudo
 ```
 
 Étape 2 : Ajouter un utilisateur au groupe sudo
-``` usermod -aG sudo <utilisateur>
+
+``` 
+usermod -aG sudo <utilisateur>
 ```
 
 Étape 3 : Vérifier les permissions
