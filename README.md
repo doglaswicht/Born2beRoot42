@@ -7,7 +7,7 @@ Dans ce projet, nous allons créer et configurer une machine virtuelle en suivan
 Qu'est-ce qu'une machine virtuelle ?
 Une machine virtuelle (VM) est un logiciel permettant d'installer un système d'exploitation au sein d'un environnement isolé, simulant un ordinateur physique. Ces machines sont hébergées sur un ordinateur hôte et utilisent un hyperviseur pour gérer les ressources matérielles (processeur, mémoire, réseau, stockage). Grâce à cela, il est possible d’exécuter plusieurs systèmes d'exploitation simultanément sur un même matériel.
 
-Comment fonctionnent les machines virtuelles ?
+Comment fonctionnent les machines virtuelles ?</br>
 Les machines virtuelles permettent de partitionner les ressources physiques et d'exécuter plusieurs environnements indépendants. Cela présente plusieurs avantages :
 
 Séparation des environnements : différentes machines invitées peuvent fonctionner sur le même hôte avec des OS différents.
