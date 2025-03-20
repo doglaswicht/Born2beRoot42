@@ -52,10 +52,11 @@ Modifier les règles avec:
 sudo visudo
 ```
 Ajouter des règles comme:
+```
 Defaults        passwd_tries=3
 Defaults        badpass_message="Mot de passe incorrect"
 Defaults        logfile="/var/log/sudo/sudo.log"
-
+```
 # SSH
 
 Étape 1 Installation et configuration de SSH:
