@@ -190,11 +190,11 @@ Sécuriser MariaDB:
 ```
 sudo mysql_secure_installation
 ```
-Définir un mot de passe root : Oui
-Supprimer les utilisateurs anonymes : Oui
-Interdire l'accès root à distance : Oui
-Supprimer la base de test : Oui
-Recharger les privilèges : Oui
+Définir un mot de passe root : Oui</br>
+Supprimer les utilisateurs anonymes : Oui</br>
+Interdire l'accès root à distance : Oui</br>
+Supprimer la base de test : Oui</br>
+Recharger les privilèges : Oui</br>
 
 Vérifier que MariaDB fonctionne:
 ```
