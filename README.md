@@ -2,6 +2,8 @@
 
 # 42cursus - Born2beroot
 
+![Welcome](https://media.giphy.com/media/dRvEZLV0ORAmHT1L5u/giphy.gif?cid=790b761157xul8bra49woss8js2s8a8t5t22h2p8hjeuekw7&ep=v1_gifs_trending&rid=giphy.gif&ct=g)
+
 Dans ce projet, nous allons créer et configurer une machine virtuelle en suivant des règles strictes. À la fin, on sera en mesure de configurer notre propre système d’exploitation en respectant des contraintes de sécurité.
 
 Qu'est-ce qu'une machine virtuelle ?</br>
