@@ -15,10 +15,10 @@ Sécurité accrue : possibilité de tester des applications dans un environnemen
 Optimisation des ressources : meilleure utilisation des ressources matérielles disponibles.</br>
 Flexibilité et portabilité : un système peut être facilement transféré d'un serveur physique à un autre.</br>
 
-Installation</br>
+### Installation</br>
 On doit installer et configurer une distribution Linux (Debian ou Rocky Linux) dans une machine virtuelle.
 
-Étapes principales :</br>
+### Étapes principales :</br>
 Installer VirtualBox (ou UTM sur Mac M1).
 Créer une machine virtuelle avec un espace disque dynamique.
 Installer Debian/Rocky Linux avec les paramètres requis.
