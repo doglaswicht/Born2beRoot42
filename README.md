@@ -4,21 +4,21 @@
 
 Dans ce projet, nous allons créer et configurer une machine virtuelle en suivant des règles strictes. À la fin, on sera en mesure de configurer notre propre système d’exploitation en respectant des contraintes de sécurité.
 
-Qu'est-ce qu'une machine virtuelle ?
+Qu'est-ce qu'une machine virtuelle ?</br>
 Une machine virtuelle (VM) est un logiciel permettant d'installer un système d'exploitation au sein d'un environnement isolé, simulant un ordinateur physique. Ces machines sont hébergées sur un ordinateur hôte et utilisent un hyperviseur pour gérer les ressources matérielles (processeur, mémoire, réseau, stockage). Grâce à cela, il est possible d’exécuter plusieurs systèmes d'exploitation simultanément sur un même matériel.
 
 Comment fonctionnent les machines virtuelles ?</br>
 Les machines virtuelles permettent de partitionner les ressources physiques et d'exécuter plusieurs environnements indépendants. Cela présente plusieurs avantages :
 
-Séparation des environnements : différentes machines invitées peuvent fonctionner sur le même hôte avec des OS différents.
-Sécurité accrue : possibilité de tester des applications dans un environnement isolé.
-Optimisation des ressources : meilleure utilisation des ressources matérielles disponibles.
-Flexibilité et portabilité : un système peut être facilement transféré d'un serveur physique à un autre.
+Séparation des environnements : différentes machines invitées peuvent fonctionner sur le même hôte avec des OS différents.</br>
+Sécurité accrue : possibilité de tester des applications dans un environnement isolé.</br>
+Optimisation des ressources : meilleure utilisation des ressources matérielles disponibles.</br>
+Flexibilité et portabilité : un système peut être facilement transféré d'un serveur physique à un autre.</br>
 
-Installation
+Installation</br>
 On doit installer et configurer une distribution Linux (Debian ou Rocky Linux) dans une machine virtuelle.
 
-Étapes principales :
+Étapes principales :</br>
 Installer VirtualBox (ou UTM sur Mac M1).
 Créer une machine virtuelle avec un espace disque dynamique.
 Installer Debian/Rocky Linux avec les paramètres requis.
