@@ -146,12 +146,12 @@ Créer un script monitoring.sh affichant des informations système :
 
 ```
 #!/bin/bash
-1.arc=$(uname -a)
-2.pcpu=$(grep "physical id" /proc/cpuinfo | sort | uniq | wc -l)
-3.vcpu=$(grep "^processor" /proc/cpuinfo | wc -l)
-4.fram=$(free -m | awk '$1 == "Mem:" {print $2}')
-5.uram=$(free -m | awk '$1 == "Mem:" {print $3}')
-6.pram=$(free | awk '$1 == "Mem:" {printf("%.2f"), $3/$2*100}')
+arc=$(uname -a)
+pcpu=$(grep "physical id" /proc/cpuinfo | sort | uniq | wc -l)
+vcpu=$(grep "^processor" /proc/cpuinfo | wc -l)
+fram=$(free -m | awk '$1 == "Mem:" {print $2}')
+uram=$(free -m | awk '$1 == "Mem:" {print $3}')
+pram=$(free | awk '$1 == "Mem:" {printf("%.2f"), $3/$2*100}')
 wall "  #Architecture: $arc
         #CPU physique: $pcpu
         #vCPU: $vcpu
