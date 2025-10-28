@@ -303,3 +303,4 @@ Restreindre l’accès aux fichiers de configuration:
 ```
 sudo chmod 600 /var/www/html/wordpress/wp-config.php
 ```
+[Go to website(AllUp)](https://www.allup.ch/projects.html)
